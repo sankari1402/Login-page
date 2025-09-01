@@ -6,8 +6,8 @@ import axios from "axios";
 
 
 function Signin(){
-
-      const navigate = useNavigate();
+  const url = "https://login-page-backend-page-1r2i.onrender.com"
+  const navigate = useNavigate();
 
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
@@ -17,7 +17,7 @@ function Signin(){
 async function handleSignin(e){
      e.preventDefault()
      try{
-    const res =   await axios.post("http://localhost:5000/signin", {
+    const res =   await axios.post(`${url}/signin`, {
         username: user,
         password: pass,
         confirmPassword: cpass,
