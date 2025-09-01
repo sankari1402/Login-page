@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 
 function Login(){
+   const url = "https://login-page-backend-page-1r2i.onrender.com"
    const navigate = useNavigate()
 
   const [user,setUser] = useState("")
@@ -18,7 +19,7 @@ function Login(){
         setPass(event.target.value)
   }
 function check (){
-    var logindetail = axios.get(`http://localhost:5000/?username=${user}&password=${pass}`)
+    var logindetail = axios.get(`${url}/?username=${user}&password=${pass}`)
     logindetail.then(function(data){
         if (data.data === true)
         {
